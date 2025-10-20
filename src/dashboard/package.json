@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate": "node validate-config.js"
   },
   "dependencies": {
     "@azure/cosmos": "^4.0.0",

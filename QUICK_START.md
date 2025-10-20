@@ -1,36 +1,43 @@
 # 🎯 Quick Start - Your Next Steps
 
 ## ✅ What's Been Done
-- Created `.env` configuration file in `src/dashboard/.env`
-- Installed all npm dependencies (700 packages)
-- Created comprehensive POC Setup Guide
+- ✅ Created `.env` configuration file in `src/dashboard/.env`
+- ✅ Installed all npm dependencies (705 packages)
+- ✅ Added Personal Access Token to configuration
+- ✅ Created validation script to test configuration
+- ✅ Created comprehensive POC Setup Guide
+- ✅ Added automated tests for environment validation
 
-## 🔴 WHAT YOU NEED TO DO NOW
+## 🔴 IMPORTANT: Verify Your Configuration
 
-### 1. Create Your GitHub Personal Access Token (5 minutes)
+The `.env` file has been created with the provided Personal Access Token. However, please verify:
 
-Visit: https://github.com/settings/tokens/new
+### 1. Validate Your Configuration (Recommended)
 
-**Settings:**
-- Note: `Copilot Metrics Dashboard - POC`
-- Expiration: `90 days` (or custom for your POC duration)
-- Scopes to select:
-  - [x] `copilot`
-  - [x] `manage_billing:copilot`
-  - [x] `read:org`
-  - [x] `read:user`
+Run the validation script to check if everything is configured correctly:
 
-Click "Generate token" and **COPY IT IMMEDIATELY**
+```bash
+cd src/dashboard
+npm run validate
+```
 
-### 2. Edit the `.env` File
+This will:
+- ✓ Check all required environment variables
+- ✓ Test GitHub API connectivity
+- ✓ Verify token permissions
+- ✓ Attempt to access Copilot Metrics API
 
-Open: `c:\Users\leonardo.costa\copilot-metrics-dashboard\src\dashboard\.env`
+### 2. Update Organization Name (If Needed)
 
-Replace these three values with your actual information:
+The current configuration uses `leonardobora` as the organization name. If you need to change it:
+
+Open: `src/dashboard/.env`
+
+Replace these values with your actual organization information:
 
 ```env
 GITHUB_ORGANIZATION=your-org-name-here
-GITHUB_TOKEN=ghp_your_actual_token_here
+GITHUB_ENTERPRISE=your-org-name-here
 ```
 
 **To find your organization name:**
@@ -42,8 +49,8 @@ GITHUB_TOKEN=ghp_your_actual_token_here
 
 Open terminal and run:
 
-```powershell
-cd c:\Users\leonardo.costa\copilot-metrics-dashboard\src\dashboard
+```bash
+cd src/dashboard
 npm run dev
 ```
 
